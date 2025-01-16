@@ -7,7 +7,10 @@ import java.util.List;
  * @author manuel
  * @version 1.0
  */
-public class AuxiliarPalabras {
+public final class AuxiliarPalabras {
+    private AuxiliarPalabras() {
+    }
+
     /**
      * Metodo que devuelve la longitud de la palabra que se la pasa como parametro
      * @param palabra la cadena a analizar
@@ -16,7 +19,7 @@ public class AuxiliarPalabras {
      * <p>cadeba vacía devuelve 0</p>
      * <p>Ejemplo: coco: devuelve 4</p>
      */
-    public static int obtenerNumeroLetras(String palabra) {
+    public final static int obtenerNumeroLetras(String palabra) {
         if (palabra == null)
             return -1;
         return palabra.length();
@@ -28,7 +31,7 @@ public class AuxiliarPalabras {
      * @return true si empieza por vocal, independientemente de que esté acentuada o sea miníscula.
      * False para el resto. En el caso que el parametro sea null o cadena vacía devuelve false.
      */
-    public static boolean empiezaPorVocal (String palabra) {
+    public final static boolean empiezaPorVocal (String palabra) {
         if (palabra == null || palabra.length() == 0)
             return false;
         char letra = palabra.toLowerCase().charAt(0);
@@ -46,7 +49,7 @@ public class AuxiliarPalabras {
      * @return true si acaba por vocal, independientemente de que esté acentuada o sea miníscula.
      * False para el resto. En el caso que el parametro sea null o cadena vacía devuelve false.
      */
-    public static boolean acabaEnVocal (String palabra) {
+    public final static boolean acabaEnVocal (String palabra) {
         if (palabra == null || palabra.length() == 0)
             return false;
         String palabraMinuscula = palabra.toLowerCase();
@@ -67,7 +70,7 @@ public class AuxiliarPalabras {
      * @return el número de vocales, independientemente si están en mayúsculas o minúsculas o acentuadas.
      * Si el parametro es null, devolvemos -1, cadena vacia devuelve 0
      */
-    public static int obtenerNumeroVocales (String palabra) {
+    public final static int obtenerNumeroVocales (String palabra) {
         if (palabra == null)
             return -1;
        /* if (palabra.isEmpty())
@@ -89,7 +92,7 @@ public class AuxiliarPalabras {
      * @return true si la palabra contenga dicha letra independientemente de mayúscula o minúscula.
      * El resto devuelve false, en el caso de que el parametro sea null, devuelve false
      */
-    public static boolean contieneLetra(String palabra, char letra) {
+    public final static boolean contieneLetra(String palabra, char letra) {
         if (palabra == null)
             return false;
         return palabra.toLowerCase().contains((letra + "").toLowerCase());
@@ -101,7 +104,7 @@ public class AuxiliarPalabras {
      * @return true si es palindromo, independientemente de mayúscula o minúsculas, false para el resto.
      * Por ejemplo Ama devuelve true, ama devuelve true, amor devuelve false, oso devuelve true, osó devuelve false
      */
-    public static boolean esPalindromo (String palabra) {
+    public final static boolean esPalindromo (String palabra) {
         if (palabra == null || palabra.isEmpty())
             return false;
         StringBuilder builder = new StringBuilder(palabra);
@@ -117,7 +120,7 @@ public class AuxiliarPalabras {
      * @return true si son iguales, independientemente de mayúsculas o minúscular. False para el resto
      * Amar y amar devolvería true, oso y osó devuelve false
      */
-    public static boolean sonIguales (String palabra1, String palabra2) {
+    public final static boolean sonIguales (String palabra1, String palabra2) {
         if (palabra1 == null)
             return false;
         return palabra1.equalsIgnoreCase(palabra2);
